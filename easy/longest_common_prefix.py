@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/longest-common-prefix/description/
+
 class Solution:
     def longestCommonPrefix(self, strs: list[str]) -> str:
         strs.sort()
@@ -12,6 +14,7 @@ class Solution:
             i += 1
         return common_prefix
     
+
 # It firts sorts the list, that way you can have shorter words first, which will then limit the size of the loop 
 # for what could possibly be the maximum prefix. 
 # After that we compare letters from the first and last words of the sorted list. 
