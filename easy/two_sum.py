@@ -25,6 +25,24 @@ class Solution_2:
             seen[number] = index
         print(seen)
             
+# SINGLE PASS HASH TABLE PEDRO
+class Solution_2:
+    @classmethod
+    def twoSum(cls, nums: list[int], target: int) -> list[int]:
+        sum_dct = {}
+        
+        # map inside the dict all the values and their indexes in key:value (value:index)
+        # when target - current_val = some element inside the dict, we know we have achieved the two number sum 
+        
+        num_length = len(nums)
+        
+        for i in range(num_length):
+            current_sum = target - nums[i]
+            
+            if current_sum in sum_dct:
+                return [sum_dct[current_sum], i]
+            sum_dct[nums[i]] = i
+        return []
             
 result = Solution_2.twoSum([2,17,50,25,39,44, 93, 3], 5)
 print(result)
