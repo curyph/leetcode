@@ -1,35 +1,29 @@
 class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
-     
-        # CLASSIC BRUTEFORCE
-        # right = len(nums)        
-        # for i in range(right):
-        #     for j in range(right):
-        #         if i != j:
-        #             pair_sum = nums[i] + nums[j]
-        #             if pair_sum == target:
-        #                 return [i, j]            
-        # return []
-    
-        n = len(nums)
-        for i in range(n):
-            for j in range(i + 1, n):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
-        return []  # No solution found
+    def searchInsert(self, nums: list[int], target: int) -> int:
+        
+        left = 0
+        right = 1
+        nums_size = len(nums)
+        
+        if target <= nums[0]:
+            return 0
+        if target > nums[nums_size - 1]:
+            return nums_size
+        
+        while right < nums_size:
 
-
-
-# a = Solution()
-# nums = [3,2,4]
-# target = 6
-# b = a.twoSum(nums, target)
-
-# print(b)
-
-a = [1, 2, 3, 4, 5]
-ll = len(a)
-print(ll)
-
-for i in range(1, 5):
-    print(i)
+            if target == nums[left]:
+                return left
+            if target > nums[left] and target <= nums[right]:
+                return right
+            left += 1
+            right += 1
+                
+                
+        
+        
+            
+a = Solution()
+#b = a.searchInsert([1], 2)
+b = a.searchInsert([1,3], 3)
+print(b)

@@ -34,6 +34,9 @@ class Solution_2:
         # map inside the dict all the values and their indexes in key:value (value:index)
         # when target - current_val = some element inside the dict, we know we have achieved the two number sum 
         
+        # dentro do meu dicionário eu preciso ter valor:índice
+        # caso a diferença entre target e o número atual do loop seja igual um elemento do dict
+        # retorna o value do dict com o seu valor + o i atual em uma lista
         num_length = len(nums)
         
         for i in range(num_length):
